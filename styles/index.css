@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import "./common.scss";
+@import "../components/navbar/navbar.styles.scss";
+@import "../components/home-header/home-header.styles.scss"; */
