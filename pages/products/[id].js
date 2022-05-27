@@ -4,15 +4,13 @@ import Images from "next/image";
 const Details = ({ product }) => {
   const { attributes } = product;
 
-  console.log(product.data.attributes.images.data);
   const firstImg = product.data.attributes.images.data[0].attributes.url;
-  console.log(firstImg);
 
   return (
     <main className='h-screen container mx-auto px-20 my-10 flex'>
       <div className='w-1/2'>
         <Images
-          src={`http://localhost:1337${firstImg}`}
+          src={`https://vast-eyrie-46380.herokuapp.com${firstImg}`}
           width={200}
           height={200}
           className='rounded-md'
@@ -21,7 +19,7 @@ const Details = ({ product }) => {
           {product.data.attributes.images.data.map((image) => (
             <div key={image.id} className=''>
               <Images
-                src={`http://localhost:1337${image.attributes.url}`}
+                src={`https://vast-eyrie-46380.herokuapp.com${image.attributes.url}`}
                 width={60}
                 height={60}
                 className='rounded-md'
@@ -50,7 +48,7 @@ const Details = ({ product }) => {
 export default Details;
 
 export const getStaticPaths = async () => {
-  const res = await axios.get("http://localhost:1337/api/products");
+  const res = await axios.get("https://vast-eyrie-46380.herokuapp.com/api/products");
 
   const paths = res.data.data.map((dt) => {
     return {
@@ -67,7 +65,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const res = await axios.get(
-    "http://localhost:1337/api/products/" + id + "?populate=*"
+    "https://vast-eyrie-46380.herokuapp.com/api/products/" + id + "?populate=*"
   );
 
   return {

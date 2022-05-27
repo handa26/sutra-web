@@ -12,7 +12,7 @@ const CardItem = ({ product }) => {
         Terlaris
       </span>
       <Image
-        src={`http://localhost:1337${imageUrl}`}
+        src={`https://vast-eyrie-46380.herokuapp.com${imageUrl}`}
         alt='model-sutra'
         width={200}
         height={200}

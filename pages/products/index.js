@@ -49,7 +49,7 @@ const Products = ({ products }) => {
 export default Products;
 
 export async function getServerSideProps() {
-  const res = await axios.get("http://localhost:1337/api/products?populate=*");
+  const res = await axios.get("https://vast-eyrie-46380.herokuapp.com/api/products?populate=*");
 
   return {
     props: {
